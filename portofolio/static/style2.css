@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+::-webkit-scrollbar {
+    width: 0em;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -162,7 +166,7 @@ span{
 .menu-sleeve {
     position: fixed;
     left: 0;
-    height: 22%;
+    height: 18em;
     width: 80px; /* Adjust the width as needed */
     background: transparent;
     border: 2px solid #fff;
@@ -214,6 +218,7 @@ span{
     top:0;
     justify-content: center;
     align-items: center;
+    margin: 10%;
 }
 
 .wrapper-projects {
@@ -231,6 +236,8 @@ span{
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper-about {
@@ -245,15 +252,15 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow:scroll;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    padding-right: 80px;
+    padding-top: 20%;
 }
 
 .wrapper-contact {
     position: relative;
-    width: 700px;
+    width: 400px;
     height: 580px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
@@ -283,13 +290,15 @@ span{
 
 .whole-wrappers{
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     position: absolute;
-    padding-top: 400px;
+    padding-top: 22%;
+    padding-left: 8%;
 }
 
 .buttons{
-    padding-top: 10%;
+    padding-top: 10em;
 }
 
 .icon-about-close {
@@ -352,11 +361,13 @@ span{
 }
 
 .contacts{
-    position: absolute;
+    display: flex;
+    position: fixed;
     left: 0;
-    bottom: 0;
+    right: 0;
+    padding-top: 25%;
+    justify-content: space-between;
 }
-
 .contacticons{
     font-size: 50px;
 }
@@ -370,6 +381,10 @@ span{
 }
 
 .contacticons-email{
+    font-size: 50px;
+}
+
+.contacticons-wapp{
     font-size: 50px;
 }
 
@@ -404,3 +419,84 @@ a {
     color: red;
 }
 
+
+.arrow-container {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid #3498db; /* Change color as needed */
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-8px);
+    }
+  }
+
+.positioned-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+}
+
+.positioned-item:nth-child(odd) {
+    top: 20px;
+}
+
+.positioned-item:nth-child(even) {
+    bottom: 20px;
+}
+
+.positioned-item:nth-child(3n) {
+    left: 100px;
+}
+
+.positioned-item:nth-child(3n + 1) {
+    right: 100px;
+}
+
+.skills p{
+    width: 130px;
+    height: 32px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    cursor:default;
+    color: white;
+    border-color: blue;
+    background-color: blue;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+    position: relative;
+}
+
+.skills p:hover{
+    transition: 0.5s;
+    color: red;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7);
+}
